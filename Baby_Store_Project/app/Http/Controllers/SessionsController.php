@@ -14,8 +14,15 @@ class SessionsController extends Controller
     public function store(){
         if(auth()->attempt(request(['email','password']))==false){
             return back()->withErrors(['message'=>'Email o contrasena incorrecta']);
+        }else{
+
+            if(auth()->user()->role == 'admin'){
+                return redirect()->route('admin.index');
+            }else{
+                return redirect()->route('user.index');
+            }
         }
-        return redirect()->route('user.index');
+        
     }
 
     public function destroy(){
