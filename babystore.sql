@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-09-2021 a las 03:52:52
+-- Tiempo de generación: 26-09-2021 a las 22:40:47
 -- Versión del servidor: 10.4.20-MariaDB
 -- Versión de PHP: 8.0.8
 
@@ -38,9 +38,9 @@ CREATE TABLE `migrations` (
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(1, '2014_10_12_000000_create_users_table', 1),
-(2, '2019_12_14_000001_create_personal_access_tokens_table', 1),
-(3, '2021_25_09_000000_create_users_table', 2);
+(1, '2019_12_14_000001_create_personal_access_tokens_table', 1),
+(2, '2021_09_26_180251_create_product_table', 1),
+(3, '2021_25_09_000000_create_users_table', 1);
 
 -- --------------------------------------------------------
 
@@ -63,6 +63,28 @@ CREATE TABLE `personal_access_tokens` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `products`
+--
+
+CREATE TABLE `products` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `price` double(8,2) NOT NULL,
+  `category` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `stock` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `products`
+--
+
+INSERT INTO `products` (`id`, `name`, `description`, `price`, `category`, `stock`) VALUES
+(11, 'Julian', 'Producto de prueba', 100.00, 'Juguetes', 300);
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `users`
 --
 
@@ -80,11 +102,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `address`, `password`, `role`) VALUES
-(11, 'Julian', 'julianramirez.r@gmail.com', 'Carrera 87a', '$2y$10$yilCukwj2kVdVAv5cOcKVu4EcO5pwsxu.PrBm1HhoLekJRJoPsky2', 'user'),
-(14, 'Julian', 'themasterkiller55@gmail.com', 'Carrera 87a', '$2y$10$C6yPSmweannPtk.wk7DKfOq/43SsM5zuBYqYkPvTNp96GOPvkRIri', 'user'),
-(16, 'Julian', 'aaaa@gmail.com', 'Carrera 87a', '$2y$10$RlKvlMLIfuXtpBWv29lWguhWKjCSG0QaPZ5iE/fVy2PutXaj1EoZ.', 'user'),
-(18, 'Julian', 'julianramirez.wm@gmail.com', 'Carrera 87a', '$2y$10$zT5NiIu0Qm7vDwxa4/ZTLuSMZOyXyLARydd7nPLBRysNk0gPCF0Dm', 'admin'),
-(19, 'Juan Pablo', 'juanpis@gmail.com', 'San Cristobal pa', '$2y$10$nmKD1JkeTkM7/mBWAlin5e4FdOWWuPU6yBee4A7P.FXj6/UEaQ1Ji', 'user');
+(1, 'Oscar', 'julianramirez.wm@gmail.com', 'Carrera 87a', '$2y$10$i9bCMGzBy7j8z8WWvKqPwucK05gQApHt4iFM7OPFEie/MwD0w4HB6', 'admin'),
+(3, 'Julian', 'juanpis@gmail.com', 'San Cristobal pa', '$2y$10$.jNphSnmkE/3WVOXH/rjcupyRINKzfrWdyYV.61hH7m3etw.BzYvW', 'User'),
+(4, 'Juanpis', 'aaaa@gmail.com', 'Carrera 87a', '$2y$10$1LI/e.lLgcrfuUHNaJrVa.CtXxuEsW1QgPbGs0KbP43k2X7PAVTkO', 'admin');
 
 --
 -- Índices para tablas volcadas
@@ -103,6 +123,12 @@ ALTER TABLE `personal_access_tokens`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `personal_access_tokens_token_unique` (`token`),
   ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
+
+--
+-- Indices de la tabla `products`
+--
+ALTER TABLE `products`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `users`
@@ -128,10 +154,16 @@ ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT de la tabla `products`
+--
+ALTER TABLE `products`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
+--
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
