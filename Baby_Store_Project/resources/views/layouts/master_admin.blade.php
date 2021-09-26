@@ -30,13 +30,16 @@
                         @if(auth()->check())
 
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Administrar usuarios</a>
+                            <a class="nav-link" href="{{route('usersAdmin.create')}}">Crear usuario</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('productsAdmin.create')}}">Crear producto</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('productsAdmin.index')}}">Administrar productos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('usersAdmin.index')}}">Administrar usuarios</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Tienda</a>
