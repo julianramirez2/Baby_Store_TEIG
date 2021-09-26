@@ -1,1 +1,1 @@
-Hola
+Este repositorio ha sido creado para la realización del proyecto Baby Store de la materia Topicos Especiales en Ingeniería de Software a cargo de los estudiantes: Julián Ramírez, Liz Rodrigues y Gustavo Molina
