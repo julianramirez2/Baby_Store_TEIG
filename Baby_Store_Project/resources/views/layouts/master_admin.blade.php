@@ -42,7 +42,7 @@
                             <a class="nav-link" href="{{route('usersAdmin.index')}}">Administrar usuarios</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Tienda</a>
+                            <a class="nav-link" href="{{route('user.products')}}">Tienda</a>
                         </li>
 
                     </ul>

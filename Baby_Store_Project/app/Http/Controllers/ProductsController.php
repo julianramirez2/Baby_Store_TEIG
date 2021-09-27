@@ -8,7 +8,7 @@ use App\Models\Product;
 class ProductsController extends Controller
 {
     public function index(){
-    
+
         $products = Product::all();
 
         return view('productsAdmin.index',compact('products'));
@@ -41,6 +41,13 @@ class ProductsController extends Controller
         $product = Product::find($id);
         $product->update($request->all());
         return redirect()->route('productsAdmin.index');
+    }
+
+    public function user(){
+
+        $products = Product::all();
+
+        return view('user.products',compact('products'));
     }
 
     public function destroy($id){

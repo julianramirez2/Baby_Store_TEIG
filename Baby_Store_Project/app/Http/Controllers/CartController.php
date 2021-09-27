@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 
+use Barryvdh\DomPDF\Facade as PDF;
+
+
 class CartController extends Controller
 {
     public function index(Request $request)
@@ -16,8 +19,8 @@ class CartController extends Controller
 
         $listProductsInCart = array();
         $ids = $request->session()->get("products"); //obtenemos ids de productos guardados en session
-        
-        
+
+
         if($ids){
             $listProductsInCart = Product::find($ids);
         }
@@ -41,5 +44,28 @@ class CartController extends Controller
     {
         $request->session()->forget('products');
         return back();
+    }
+
+    public function pdf(Request $request){
+
+        $data = []; //to be sent to the view
+
+        $listProducts = array();
+        $listProducts = Product::all();
+
+        $listProductsInCart = array();
+        $ids = $request->session()->get("products"); //obtenemos ids de productos guardados en session
+
+
+        if($ids){
+            $listProductsInCart = Product::find($ids);
+        }
+
+        $data["title"] = "cart";
+        $data["products"] = $listProducts;
+        $data["productsInCart"] = $listProductsInCart;
+
+        $pdf = PDF::loadView('user.pdf', compact('data', 'listProductsInCart'));
+        return $pdf->download('cart.pdf');
     }
 }

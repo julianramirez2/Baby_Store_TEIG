@@ -22,7 +22,7 @@ class SessionsController extends Controller
                 return redirect()->route('user.index');
             }
         }
-        
+
     }
 
     public function destroy(){
@@ -30,4 +30,3 @@ class SessionsController extends Controller
         return redirect()->route('auth.login');
     }
 }
-

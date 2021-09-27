@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section("title", "Carrito")
+@section("title", "WishList")
 
 @section('content')
 <div class="container">
@@ -13,7 +13,7 @@
                     Id: {{ $row -> id }} -
                     Name: {{ $row -> name }} -
                     Price: {{ $row -> price }} -
-                    <a href="{{ route('cart.add', $row->id) }}">Add to cart</a>
+                    <a href="{{ route('wishlist.add', $row->id) }}">Add to wishlist</a>
                 </li>
                 @endforeach
             </ul>
@@ -22,18 +22,16 @@
 
     <div class="row justify-content-center">
         <div class="col-md-12">
-            <h1>Products in cart</h1>
+            <h1>Products in wishlist</h1>
             <ul>
-                @foreach($data["productsInCart"] as $key)
+                @foreach($data["productsInWishlist"] as $key)
                 <li>
-                    Producto: {{ $key -> name }} -
-                    Precio: {{ $key -> price }}
+                    Id: {{ $key -> id }} -
+                    Name: {{ $key -> name }} -
                 </li>
                 @endforeach
             </ul>
-            <a href="{{route('cart.remove')}}">Remove all products from cart</a>
-            <p>  </p>
-            <a href="{{route('cart.pdf')}}">Generate pdf of products in cart</a>
+            <a href="{{route('wishlist.remove')}}">Remove all products from wishlist</a>
         </div>
     </div>
 

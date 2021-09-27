@@ -8,6 +8,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\WishListController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,7 +28,7 @@ Route::get('/register',[RegisterController::class,'create'])->middleware('guest'
 Route::get('/mainUser',[HomeController::class,'user'])->name('user.index');
 Route::get('/logout',[SessionsController::class,'destroy'])->middleware('auth')->name('auth.destroy');
 Route::get('/admin',[AdminController::class,'index'])->middleware('auth.admin')->name('admin.index');
-Route::get('/products',[ProductsController::class,'index'])->middleware('auth.admin')->name('productsAdmin.index');
+Route::get('/adminProducts',[ProductsController::class,'index'])->middleware('auth.admin')->name('productsAdmin.index');
 Route::get('/products/create',[ProductsController::class,'create'])->middleware('auth.admin')->name('productsAdmin.create');
 Route::get('/products/edit/{id}',[ProductsController::class,'edit'])->middleware('auth.admin')->name('productsAdmin.edit');
 
@@ -39,6 +40,8 @@ Route::get('/cart',[CartController::class,'index'])->name('cart.index');
 Route::get('/cart/add/{id}',[CartController::class,'add'])->name('cart.add');
 Route::get('/cart/remove',[CartController::class,'removeAll'])->name('cart.remove');
 
+Route::get('/cart/pdf',[CartController::class,'pdf'])->name('cart.pdf');
+
 Route::post('/register',[RegisterController::class,'store'])->name('auth.store');
 Route::post('/login',[SessionsController::class,'store'])->name('auth.store');
 Route::post('/products/create',[ProductsController::class,'store'])->middleware('auth.admin')->name('productsAdmin.store');
@@ -49,8 +52,8 @@ Route::post('/users/create',[UsersController::class,'store'])->middleware('auth.
 Route::post('/users/edit/{id}',[UsersController::class,'update'])->middleware('auth.admin')->name('usersAdmin.update');
 Route::delete('/users/delete/{id}',[UsersController::class,'destroy'])->name('usersAdmin.destroy');
 
+Route::get('/products',[ProductsController::class,'user'])->name('user.products');
 
-
-
-
-
+Route::get('/wishlist',[WishListController::class,'index'])->name('wishlist.index');
+Route::get('/wishlist/add/{id}',[WishListController::class,'add'])->name('wishlist.add');
+Route::get('/wishlist/remove',[WishListController::class,'removeAll'])->name('wishlist.remove');

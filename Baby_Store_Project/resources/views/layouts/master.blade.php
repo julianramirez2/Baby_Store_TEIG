@@ -26,22 +26,42 @@
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
                         @if(auth()->check())
+                        @if(auth()->user()->role == 'admin')
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Pagina principal</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Tienda</a>
+                            <a class="nav-link" href="{{route('user.products')}}">Tienda</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Sobre nosotros</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('admin.index')}}"> <b style="color: #17a2b8;">Panel administrativo</b> </a>
+                        </li>
+                        @else
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{{route('mainPage')}}">Pagina principal</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('user.products')}}">Tienda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Sobre nosotros</a>
+                        </li>
+                        @endif
 
                     </ul>
 
                     <span class="navbar-text me-4">
                         Hola <b style="color: #17a2b8;">{{auth()->user()->name}}</b>
                     </span>
+
+                    <a class="btn btn btn-info" type="submit" href="{{route('wishlist.index')}}">WishList</a>
+
+                    <p>.....</p>
+
+                    <a class="btn btn btn-info" type="submit" href="{{route('cart.index')}}">Carrito</a>
+
+                    <p>.....</p>
 
                     <a class="btn btn btn-info" type="submit" href="{{route('auth.destroy')}}">Salir</a>
 

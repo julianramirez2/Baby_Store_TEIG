@@ -3,4 +3,5 @@
 @section("title", "Pagina principal")
 
 @section('content')
+
 @endsection
