@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-09-2021 a las 22:40:47
+-- Tiempo de generación: 27-09-2021 a las 23:48:27
 -- Versión del servidor: 10.4.20-MariaDB
 -- Versión de PHP: 8.0.8
 
@@ -80,7 +80,10 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `description`, `price`, `category`, `stock`) VALUES
-(11, 'Julian', 'Producto de prueba', 100.00, 'Juguetes', 300);
+(11, 'Producto 1', 'Producto de prueba', 100.00, 'Juguetes', 300),
+(22, 'Producto 2', 'Producto de prueba', 100.00, 'Juguetes', 121),
+(23, 'Alfan', 'alfan', 12313.00, '1313', 1313),
+(24, 'big', 'bi', 1231.00, 'bigg', 1231);
 
 -- --------------------------------------------------------
 
@@ -104,7 +107,9 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `name`, `email`, `address`, `password`, `role`) VALUES
 (1, 'Oscar', 'julianramirez.wm@gmail.com', 'Carrera 87a', '$2y$10$i9bCMGzBy7j8z8WWvKqPwucK05gQApHt4iFM7OPFEie/MwD0w4HB6', 'admin'),
 (3, 'Julian', 'juanpis@gmail.com', 'San Cristobal pa', '$2y$10$.jNphSnmkE/3WVOXH/rjcupyRINKzfrWdyYV.61hH7m3etw.BzYvW', 'User'),
-(4, 'Juanpis', 'aaaa@gmail.com', 'Carrera 87a', '$2y$10$1LI/e.lLgcrfuUHNaJrVa.CtXxuEsW1QgPbGs0KbP43k2X7PAVTkO', 'admin');
+(4, 'Juanpis', 'aaaa@gmail.com', 'Carrera 87a', '$2y$10$1LI/e.lLgcrfuUHNaJrVa.CtXxuEsW1QgPbGs0KbP43k2X7PAVTkO', 'admin'),
+(5, 'Usuario', 'usuario@gmail.com', 'Carrera 87a', '$2y$10$SE6MsULyrArHoQxZRvU5N.J6V22voH3dBrUR5zt/Hd5mJb0stcKFW', 'user'),
+(7, 'admin', 'admin@gmail.com', 'admin', '$2y$10$Wm2sAaurHD1BpRxbJvuB4e2/WWhcTS7Say5h8U5T7fojWOQaFuCQu', 'admin');
 
 --
 -- Índices para tablas volcadas
@@ -157,13 +162,13 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT de la tabla `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
