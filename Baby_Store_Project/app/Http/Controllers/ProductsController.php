@@ -46,7 +46,13 @@ class ProductsController extends Controller
     public function user(){
 
         $products = Product::all();
+        
+        return view('user.products',compact('products'));
+    }
 
+    public function orderByName(){
+        $products = Product::orderBy('name')->get();
+        
         return view('user.products',compact('products'));
     }
 

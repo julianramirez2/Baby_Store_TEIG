@@ -53,6 +53,7 @@ Route::post('/users/edit/{id}',[UsersController::class,'update'])->middleware('a
 Route::delete('/users/delete/{id}',[UsersController::class,'destroy'])->name('usersAdmin.destroy');
 
 Route::get('/products',[ProductsController::class,'user'])->name('user.products');
+Route::get('/products/ord',[ProductsController::class,'orderByName'])->name('user.productsOrd');
 
 Route::get('/wishlist',[WishListController::class,'index'])->name('wishlist.index');
 Route::get('/wishlist/add/{id}',[WishListController::class,'add'])->name('wishlist.add');

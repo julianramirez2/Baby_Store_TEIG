@@ -25,6 +25,7 @@
 </div>
 <!--style="width: 20rem; height:27rem;"-->
 @endforeach
+<a class="btn btn btn-info" href="{{route('user.productsOrd')}}">Ordenar alfabeticamente</a>
 @else
 <div class="alert alert-danger" role="alert">
   ERROR, NO HAS LOGUEADO TU CUENTA
