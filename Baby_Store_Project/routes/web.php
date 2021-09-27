@@ -7,6 +7,7 @@ use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\CartController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,6 +34,10 @@ Route::get('/products/edit/{id}',[ProductsController::class,'edit'])->middleware
 Route::get('/users',[UsersController::class,'index'])->middleware('auth.admin')->name('usersAdmin.index');
 Route::get('/users/create',[UsersController::class,'create'])->middleware('auth.admin')->name('usersAdmin.create');
 Route::get('/users/edit/{id}',[UsersController::class,'edit'])->middleware('auth.admin')->name('userssAdmin.edit');
+
+Route::get('/cart',[CartController::class,'index'])->name('cart.index');
+Route::get('/cart/add/{id}',[CartController::class,'add'])->name('cart.add');
+Route::get('/cart/remove',[CartController::class,'removeAll'])->name('cart.remove');
 
 Route::post('/register',[RegisterController::class,'store'])->name('auth.store');
 Route::post('/login',[SessionsController::class,'store'])->name('auth.store');
