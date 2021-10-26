@@ -24,9 +24,9 @@
         <div class="card">
             <img src="#" class="card-img-top" alt="..." style="width:20rem; height:150px;">
             <div class="card-body">
-                <h5 class="card-title">{{$row->name}}</h5>
-                <p class="card-text">{{$row->description}}</p>
-                <p class="card-text">{{$row->price}} COP</p>
+                <h5 class="card-title">{{$row->getName()}}</h5>
+                <p class="card-text">{{$row->getDesc()}}</p>
+                <p class="card-text">{{$row->getPrice()}} COP</p>
                 <a href="#" class="btn btn-dark">Detalles del producto</a>
                 <p> </p>
                 <a href="{{ route('cart.add', $row->id) }}" class="btn btn-dark">Añadir al carrito</a>

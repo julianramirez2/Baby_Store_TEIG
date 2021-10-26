@@ -55,6 +55,4 @@ Route::delete('/users/delete/{id}',[UsersController::class,'destroy'])->name('us
 Route::get('/products',[ProductsController::class,'userSearch'])->name('user.products');
 Route::get('/products/ord',[ProductsController::class,'orderByName'])->name('user.productsOrd');
 
-Route::get('/wishlist',[WishListController::class,'index'])->name('wishlist.index');
-Route::get('/wishlist/add/{id}',[WishListController::class,'add'])->name('wishlist.add');
-Route::get('/wishlist/remove',[WishListController::class,'removeAll'])->name('wishlist.remove');
+

@@ -55,10 +55,7 @@
                         Hola <b style="color: #17a2b8;">{{auth()->user()->name}}</b>
                     </span>
 
-                    <a class="btn btn btn-info" type="submit" href="{{route('wishlist.index')}}">WishList</a>
-
-                    <p>.....</p>
-
+                
                     <a class="btn btn btn-info" type="submit" href="{{route('cart.index')}}">Carrito</a>
 
                     <p>.....</p>

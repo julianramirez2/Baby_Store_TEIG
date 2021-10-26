@@ -28,8 +28,8 @@
         <div class="contenido">
             @foreach($data["productsInCart"] as $key)
             <li>
-                Nombre: {{ $key -> name }} ----------------
-                Precio: {{ $key -> price }} 
+                Nombre: {{ $key -> getName() }} ----------------
+                Precio: {{ $key -> getPrice() }} 
             </li>
             @endforeach
         </div>

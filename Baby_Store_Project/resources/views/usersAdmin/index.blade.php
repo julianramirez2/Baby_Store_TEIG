@@ -17,11 +17,11 @@
         @foreach($user as $row)
 
         <tr>
-            <td>{{$row->id}}</td>
-            <td>{{$row->name}}</td>
-            <td>{{$row->email}}</td>
-            <td>{{$row->address}}</td>
-            <td>{{$row->role}}</td>
+            <td>{{$row->getId()}}</td>
+            <td>{{$row->getName()}}</td>
+            <td>{{$row->getEmail()}}</td>
+            <td>{{$row->getAddress()}}</td>
+            <td>{{$row->getRole()}}</td>
             <td class="d-flex justify-content-start">
 
                 <form method="POST" action="{{route('usersAdmin.destroy', $row->id)}}">

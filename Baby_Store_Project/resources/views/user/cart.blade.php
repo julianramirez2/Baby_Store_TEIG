@@ -10,9 +10,9 @@
             <ul>
                 @foreach($data["products"] as $row)
                 <li>
-                    Id: {{ $row -> id }} -
-                    Name: {{ $row -> name }} -
-                    Price: {{ $row -> price }} -
+                    Id: {{ $row -> getID() }} -
+                    Name: {{ $row -> getName() }} -
+                    Price: {{ $row -> getPrice() }} -
                     <a href="{{ route('cart.add', $row->id) }}">Add to cart</a>
                 </li>
                 @endforeach
@@ -26,8 +26,8 @@
             <ul>
                 @foreach($data["productsInCart"] as $key)
                 <li>
-                    Producto: {{ $key -> name }} -
-                    Precio: {{ $key -> price }}
+                    Producto: {{ $key -> getName() }} -
+                    Precio: {{ $key -> getPrice() }}
                 </li>
                 @endforeach
             </ul>

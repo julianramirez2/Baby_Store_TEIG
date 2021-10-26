@@ -19,22 +19,22 @@
                                 @csrf
                     
                                 <div class="form-outline form-white mb-4">
-                                    <input name="name" type="text" id="typeEmailX" class="form-control form-control-lg" value="{{$user->name}}" />
+                                    <input name="name" type="text" id="typeEmailX" class="form-control form-control-lg" value="{{$user->getName()}}" />
                                     <label class="form-label" for="typeEmailX" >Nombre</label>
                                 </div>
 
                                 <div class="form-outline form-white mb-4">
-                                    <input name="email" type="text" id="typePasswordX" class="form-control form-control-lg" value="{{$user->email}}"/>
+                                    <input name="email" type="text" id="typePasswordX" class="form-control form-control-lg" value="{{$user->getEmail()}}"/>
                                     <label class="form-label" for="typePasswordX" placeholder="{{$user->email}}">Email</label>
                                 </div>
 
                                 <div class="form-outline form-white mb-4">
-                                    <input name="address" type="text" id="typePasswordX" class="form-control form-control-lg" value="{{$user->address}}" />
+                                    <input name="address" type="text" id="typePasswordX" class="form-control form-control-lg" value="{{$user->getAddress()}}" />
                                     <label class="form-label" for="typePasswordX" >Direccion</label>
                                 </div>
 
                                 <div class="form-outline form-white mb-4">
-                                    <input name="role" type="text" id="typePasswordX" class="form-control form-control-lg" value="{{$user->role}}"/>
+                                    <input name="role" type="text" id="typePasswordX" class="form-control form-control-lg" value="{{$user->getRole()}}"/>
                                     <label class="form-label" for="typePasswordX">Rol</label>
                                 </div>
 
