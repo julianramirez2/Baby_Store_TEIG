@@ -52,7 +52,7 @@ Route::post('/users/create',[UsersController::class,'store'])->middleware('auth.
 Route::post('/users/edit/{id}',[UsersController::class,'update'])->middleware('auth.admin')->name('usersAdmin.update');
 Route::delete('/users/delete/{id}',[UsersController::class,'destroy'])->name('usersAdmin.destroy');
 
-Route::get('/products',[ProductsController::class,'user'])->name('user.products');
+Route::get('/products',[ProductsController::class,'userSearch'])->name('user.products');
 Route::get('/products/ord',[ProductsController::class,'orderByName'])->name('user.productsOrd');
 
 Route::get('/wishlist',[WishListController::class,'index'])->name('wishlist.index');

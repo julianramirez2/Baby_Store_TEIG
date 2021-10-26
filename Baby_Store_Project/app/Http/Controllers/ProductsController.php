@@ -31,6 +31,8 @@ class ProductsController extends Controller
         return redirect()->route('productsAdmin.index');
     }
 
+    
+
     public function edit($id){
         $product = Product::find($id);
 
@@ -43,7 +45,7 @@ class ProductsController extends Controller
         return redirect()->route('productsAdmin.index');
     }
 
-    public function user(Request $request){
+    public function userSearch(Request $request){
 
         $busqueda = $request->get('productName');
 
