@@ -20,11 +20,11 @@ class ProductsController extends Controller
 
     public function store(Request $request){
         $product = new Product();
-        $product -> name = $request -> name;
-        $product -> description = $request -> description;
-        $product -> price = $request -> price;
-        $product -> category = $request -> category;
-        $product -> stock = $request -> stock;
+        $product -> setName($request -> name);
+        $product -> setDesc($request -> description);
+        $product -> setPrice($request -> price);
+        $product -> setCat($request -> category);
+        $product -> setStock($request -> stock);
 
         $product->save();
 

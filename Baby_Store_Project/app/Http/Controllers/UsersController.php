@@ -20,11 +20,11 @@ class UsersController extends Controller
 
     public function store(Request $request){
         $user = new User();
-        $user -> name = $request -> name;
-        $user -> email = $request -> email;
-        $user -> address = $request -> address;
+        $user -> setName($request -> name);
+        $user -> setEmail($request -> email);
+        $user -> setAddress($request -> address);
         $user -> password = $request -> password;
-        $user -> role = $request -> role;
+        $user -> setRole($request -> role);
 
         $user->save();
 
