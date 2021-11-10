@@ -20,15 +20,15 @@
 
 <div class="container container-style">
 <div class="row row-cols-1 row-cols-md-3 g-4">
-    @foreach($products as $row)
+    @foreach($products as $prod)
   <div class="col">
     <div class="card">
       <img src="images/banner.png" class="card-img-top" alt="">
       <div class="card-body">
-        <h5 class="card-title">{{$row->getName()}}</h5>
-        <p class="card-text">{{$row->getDesc()}}</p>
-        <p class="card-text">{{$row->getPrice()}}</p>
-        <a href="{{ route('cart.add', $row->id) }}" class="btn btn-dark">{{__('messages.addCart')}}</a>
+        <h5 class="card-title">{{$prod->getName()}}</h5>
+        <p class="card-text">{{$prod->getDesc()}}</p>
+        <p class="card-text">{{$prod->getPrice()}}</p>
+        <a href="{{ route('cart.add', $prod->id) }}" class="btn btn-dark">{{__('messages.addCart')}}</a>
       </div>
     </div>
   </div>
