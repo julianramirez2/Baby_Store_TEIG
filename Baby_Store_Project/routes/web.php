@@ -32,9 +32,9 @@ Route::get('/adminProducts',[ProductsController::class,'index'])->middleware('au
 Route::get('/products/create',[ProductsController::class,'create'])->middleware('auth.admin')->name('productsAdmin.create');
 Route::get('/products/edit/{id}',[ProductsController::class,'edit'])->middleware('auth.admin')->name('productsAdmin.edit');
 
-Route::get('/users',[UsersController::class,'index'])->middleware('auth.admin')->name('usersAdmin.index');
-Route::get('/users/create',[UsersController::class,'create'])->middleware('auth.admin')->name('usersAdmin.create');
-Route::get('/users/edit/{id}',[UsersController::class,'edit'])->middleware('auth.admin')->name('userssAdmin.edit');
+Route::get('/users',[UsersController::class,'userTable'])->middleware('auth.admin')->name('admin.userTable');
+Route::get('/users/create',[UsersController::class,'create'])->middleware('auth.admin')->name('admin.create');
+Route::get('/users/edit/{id}',[UsersController::class,'edit'])->middleware('auth.admin')->name('admin.edit');
 
 Route::get('/cart',[CartController::class,'index'])->name('cart.index');
 Route::get('/cart/add/{id}',[CartController::class,'add'])->name('cart.add');
@@ -48,9 +48,9 @@ Route::post('/products/create',[ProductsController::class,'store'])->middleware(
 Route::post('/products/edit/{id}',[ProductsController::class,'update'])->middleware('auth.admin')->name('productsAdmin.update');
 Route::delete('/products/delete/{id}',[ProductsController::class,'destroy'])->name('productsAdmin.destroy');
 
-Route::post('/users/create',[UsersController::class,'store'])->middleware('auth.admin')->name('usersAdmin.store');
-Route::post('/users/edit/{id}',[UsersController::class,'update'])->middleware('auth.admin')->name('usersAdmin.update');
-Route::delete('/users/delete/{id}',[UsersController::class,'destroy'])->name('usersAdmin.destroy');
+Route::post('/users/create',[UsersController::class,'store'])->middleware('auth.admin')->name('admin.store');
+Route::post('/users/edit/{id}',[UsersController::class,'update'])->middleware('auth.admin')->name('admin.update');
+Route::delete('/users/delete/{id}',[UsersController::class,'destroy'])->name('admin.destroy');
 
 Route::get('/products',[ProductsController::class,'userSearch'])->name('user.products');
 Route::get('/products/ord',[ProductsController::class,'orderByName'])->name('user.productsOrd');

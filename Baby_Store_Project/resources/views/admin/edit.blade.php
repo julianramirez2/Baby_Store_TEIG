@@ -12,33 +12,33 @@
 
                         <div class="mb-md-5 mt-md-4 pb-5">
 
-                            <h2 class="fw-bold mb-2 text-uppercase">Editar producto {{$user->id}}</h2>
-                            <p class="text-white-50 mb-5">Por favor rellena los campos necesarios</p>
+                            <h2 class="fw-bold mb-2 text-uppercase">{{__('messages.userEdit')}} {{$user->id}}</h2>
+                            <p class="text-white-50 mb-5">{{__('messages.pleaseR')}}</p>
 
-                            <form method="POST" action="{{route('usersAdmin.update',$user->id)}}">
+                            <form method="POST" action="{{route('admin.update',$user->id)}}">
                                 @csrf
                     
                                 <div class="form-outline form-white mb-4">
                                     <input name="name" type="text" id="typeEmailX" class="form-control form-control-lg" value="{{$user->getName()}}" />
-                                    <label class="form-label" for="typeEmailX" >Nombre</label>
+                                    <label class="form-label" for="typeEmailX" >{{__('messages.name')}}</label>
                                 </div>
 
                                 <div class="form-outline form-white mb-4">
                                     <input name="email" type="text" id="typePasswordX" class="form-control form-control-lg" value="{{$user->getEmail()}}"/>
-                                    <label class="form-label" for="typePasswordX" placeholder="{{$user->email}}">Email</label>
+                                    <label class="form-label" for="typePasswordX" placeholder="{{$user->email}}">{{__('messages.email')}}</label>
                                 </div>
 
                                 <div class="form-outline form-white mb-4">
                                     <input name="address" type="text" id="typePasswordX" class="form-control form-control-lg" value="{{$user->getAddress()}}" />
-                                    <label class="form-label" for="typePasswordX" >Direccion</label>
+                                    <label class="form-label" for="typePasswordX" >{{__('messages.address')}}</label>
                                 </div>
 
                                 <div class="form-outline form-white mb-4">
                                     <input name="role" type="text" id="typePasswordX" class="form-control form-control-lg" value="{{$user->getRole()}}"/>
-                                    <label class="form-label" for="typePasswordX">Rol</label>
+                                    <label class="form-label" for="typePasswordX">{{__('messages.role')}}</label>
                                 </div>
 
-                                <button class="btn btn-outline-light btn-lg px-5" type="submit">Actualizar</button>
+                                <button class="btn btn-outline-light btn-lg px-5" type="submit">{{__('messages.update')}}</button>
                             </form>
 
 

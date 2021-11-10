@@ -23,7 +23,7 @@
     </style>
     </head>
     <body>
-        <h1>FACTURA DE COMPRA</h1>
+        <h1>FACTURA</h1>
         <hr>
         <div class="contenido">
             @foreach($data["productsInCart"] as $key)

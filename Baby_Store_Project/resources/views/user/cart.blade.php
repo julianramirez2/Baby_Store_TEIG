@@ -3,39 +3,32 @@
 @section("title", "Carrito")
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-12">
-            <h1>Available products</h1>
-            <ul>
-                @foreach($data["products"] as $row)
-                <li>
-                    Id: {{ $row -> getID() }} -
-                    Name: {{ $row -> getName() }} -
-                    Price: {{ $row -> getPrice() }} -
-                    <a href="{{ route('cart.add', $row->id) }}">Add to cart</a>
-                </li>
-                @endforeach
-            </ul>
-        </div>
-    </div>
 
-    <div class="row justify-content-center">
-        <div class="col-md-12">
-            <h1>Products in cart</h1>
-            <ul>
-                @foreach($data["productsInCart"] as $key)
-                <li>
-                    Producto: {{ $key -> getName() }} -
-                    Precio: {{ $key -> getPrice() }}
-                </li>
-                @endforeach
-            </ul>
-            <a href="{{route('cart.remove')}}">Remove all products from cart</a>
-            <p>  </p>
-            <a href="{{route('cart.pdf')}}">Generate pdf of products in cart</a>
-        </div>
-    </div>
+<div id="cartText" class="text-center">{{__('messages.cart')}}</div>
 
+<table class="table table-responsive table-striped">
+  <thead>
+    <tr>
+      <th scope="col">{{__('messages.name')}}</th>
+      <th scope="col">{{__('messages.price')}}</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    @foreach($data["productsInCart"] as $product)
+    <tr>
+      <td>{{$product -> getName()}}</td>
+      <td>{{$product -> getPrice()}}</td>
+    </tr>
+    @endforeach
+  </tbody>
+</table>
+
+<div class="text-center">
+    <div class="btn-group text-center" role="group" aria-label="Basic mixed styles example">
+        <a href="{{route('cart.remove')}}" type="button" class="btn btn-danger">{{__('messages.deleteProducts')}}</a>
+        <a href="{{route('cart.pdf')}}" type="button" class="btn btn-warning">{{__('messages.generatePDF')}}</a>
+    </div>
 </div>
+
 @endsection

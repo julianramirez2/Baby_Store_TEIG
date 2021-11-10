@@ -8,14 +8,16 @@ use App\Models\User;
 class UsersController extends Controller
 {
     public function index(){
-    
-        $user = User::all();
+        return view('admin.index');
+    }
 
-        return view('usersAdmin.index',compact('user'));
+    public function userTable(){
+        $user = User::all();
+        return view('admin.userTable',compact('user'));
     }
 
     public function create(){
-        return view('usersAdmin.create');
+        return view('admin.create');
     }
 
     public function store(Request $request){
@@ -28,23 +30,23 @@ class UsersController extends Controller
 
         $user->save();
 
-        return redirect()->route('usersAdmin.index');
+        return redirect()->route('admin.index');
     }
 
     public function edit($id){
         $user = User::find($id);
-        return view('usersAdmin.edit',compact('user'));
+        return view('admin.edit',compact('user'));
     }
 
     public function update(Request $request,$id){
         $user = User::find($id);
         $user->update($request->all());
-        return redirect()->route('usersAdmin.index');
+        return redirect()->route('admin.index');
     }
 
     public function destroy($id){
         $user = User::find($id);
         $user -> delete();
-        return redirect()->route('usersAdmin.index');
+        return redirect()->route('admin.index');
     }
 }

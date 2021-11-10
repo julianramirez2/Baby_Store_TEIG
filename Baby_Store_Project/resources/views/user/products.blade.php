@@ -11,9 +11,9 @@
         <form class="d-flex">
             <input name="productName" class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
                 style="margin-left:10px;">
-            <button class="btn btn-outline-success" type="submit">Search</button>
+            <button class="btn btn-outline-success" type="submit">{{__('messages.search')}}</button>
         </form>
-        <a class="btn btn-outline-success" href="{{route('user.productsOrd')}}">Ordenar alfabeticamente</a>
+        <a class="btn btn-outline-success" href="{{route('user.productsOrd')}}">{{__('messages.alphOr')}}</a>
     </nav>
 </div>
 @foreach($products as $row)
@@ -27,9 +27,8 @@
                 <h5 class="card-title">{{$row->getName()}}</h5>
                 <p class="card-text">{{$row->getDesc()}}</p>
                 <p class="card-text">{{$row->getPrice()}} COP</p>
-                <a href="#" class="btn btn-dark">Detalles del producto</a>
                 <p> </p>
-                <a href="{{ route('cart.add', $row->id) }}" class="btn btn-dark">Añadir al carrito</a>
+                <a href="{{ route('cart.add', $row->id) }}" class="btn btn-dark">{{__('messages.addCart')}}</a>
             </div>
         </div>
     </div>
@@ -42,7 +41,7 @@
 
 @else
 <div class="alert alert-danger" role="alert">
-    ERROR, NO HAS LOGUEADO TU CUENTA
+    {{__('messages.logEr')}}
 </div>
 @endif
 @endsection

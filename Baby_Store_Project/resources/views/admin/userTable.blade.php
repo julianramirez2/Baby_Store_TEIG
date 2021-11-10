@@ -6,11 +6,11 @@
 <table class="table table-responsive table-striped">
     <thead>
         <tr>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>E-mail</th>
-            <th>Direccion</th>
-            <th>Rol</th>
+            <th>{{__('messages.ID')}}</th>
+            <th>{{__('messages.name')}}</th>
+            <th>{{__('messages.email')}}</th>
+            <th>{{__('messages.address')}}</th>
+            <th>{{__('messages.role')}}</th>
         </tr>
     </thead>
     <tbody>
@@ -24,13 +24,13 @@
             <td>{{$row->getRole()}}</td>
             <td class="d-flex justify-content-start">
 
-                <form method="POST" action="{{route('usersAdmin.destroy', $row->id)}}">
+                <form method="POST" action="{{route('admin.destroy', $row->id)}}">
                     @csrf
                     @method('delete')
                     <button type="submit" class="btn btn-danger me-2"><i class="fa fa-trash fa-lg"></i></button>
                 </form>
 
-                <a href="{{route('userssAdmin.edit', $row->id)}}'" type="submit" class="btn btn-primary"><i class="fa fa-edit fa-lg"></i></button>
+                <a href="{{route('admin.edit', $row->id)}}'" type="submit" class="btn btn-primary"><i class="fa fa-edit fa-lg"></i></button>
 
             </td>
         </tr>

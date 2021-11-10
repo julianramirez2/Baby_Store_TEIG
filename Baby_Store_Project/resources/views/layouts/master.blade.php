@@ -7,6 +7,8 @@
 
     <link href="{{asset('css/customStyle.css')}}" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 
@@ -28,49 +30,49 @@
                         @if(auth()->check())
                         @if(auth()->user()->role == 'admin')
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('user.products')}}">Tienda</a>
+                            <a class="nav-link" href="{{route('user.products')}}">{{__('messages.store')}}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Sobre nosotros</a>
+                            <a class="nav-link" href="#">{{__('messages.aboutUs')}}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('admin.index')}}"> <b style="color: #17a2b8;">Panel administrativo</b> </a>
+                            <a class="nav-link" href="{{route('admin.index')}}"> <b style="color: #17a2b8;">{{__('messages.adminPanel')}}</b> </a>
                         </li>
                         @else
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{{route('mainPage')}}">Pagina principal</a>
+                            <a class="nav-link active" aria-current="page" href="{{route('mainPage')}}">{{__('messages.mainPage')}}</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('user.products')}}">Tienda</a>
+                            <a class="nav-link" href="{{route('user.products')}}">{{__('messages.store')}}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Sobre nosotros</a>
+                            <a class="nav-link" href="#">{{__('messages.aboutUs')}}</a>
                         </li>
                         @endif
 
                     </ul>
 
                     <span class="navbar-text me-4">
-                        Hola <b style="color: #17a2b8;">{{auth()->user()->name}}</b>
+                    {{__('messages.hello')}} <b style="color: #17a2b8;">{{auth()->user()->name}}</b>
                     </span>
 
                 
-                    <a class="btn btn btn-info" type="submit" href="{{route('cart.index')}}">Carrito</a>
+                    <a class="btn btn btn-info" type="submit" href="{{route('cart.index')}}">{{__('messages.cart')}}</a>
 
                     <p>.....</p>
 
-                    <a class="btn btn btn-info" type="submit" href="{{route('auth.destroy')}}">Salir</a>
+                    <a class="btn btn btn-info" type="submit" href="{{route('auth.destroy')}}">{{__('messages.exit')}}</a>
 
                     @else
 
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('auth.login')}}">Ingresar</a>
+                            <a class="nav-link" href="{{route('auth.login')}}">{{__('messages.login')}}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('auth.register')}}">Registrarse</a>
+                            <a class="nav-link" href="{{route('auth.register')}}">{{__('messages.register')}}</a>
                         </li>
 
                     </ul>

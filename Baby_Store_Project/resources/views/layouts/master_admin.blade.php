@@ -19,7 +19,7 @@
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand me-2" href="{{route('admin.index')}}">Baby Store</a>
+                <a class="navbar-brand me-2" href="{{route('admin.index')}}">Baby Store - Admin</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
                     aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -30,38 +30,38 @@
                         @if(auth()->check())
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('usersAdmin.create')}}">Crear usuario</a>
+                            <a class="nav-link" href="{{route('admin.create')}}">{{__('messages.createUser')}}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('productsAdmin.create')}}">Crear producto</a>
+                            <a class="nav-link" href="{{route('productsAdmin.create')}}">{{__('messages.createProduct')}}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('productsAdmin.index')}}">Administrar productos</a>
+                            <a class="nav-link" href="{{route('productsAdmin.index')}}">{{__('messages.adminProduct')}}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('usersAdmin.index')}}">Administrar usuarios</a>
+                            <a class="nav-link" href="{{route('admin.userTable')}}">{{__('messages.adminUser')}}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('user.products')}}">Tienda</a>
+                            <a class="nav-link" href="{{route('user.products')}}">{{__('messages.store')}}</a>
                         </li>
 
                     </ul>
 
                     <span class="navbar-text me-4">
-                        Hola <b style="color: #17a2b8;">{{auth()->user()->name}}</b>
+                        {{__('messages.hello')}} <b style="color: #17a2b8;">{{auth()->user()->name}}</b>
                     </span>
 
-                    <a class="btn btn btn-info" type="submit" href="{{route('auth.destroy')}}">Salir</a>
+                    <a class="btn btn btn-info" type="submit" href="{{route('auth.destroy')}}">{{__('messages.exit')}}</a>
 
                     @else
 
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('auth.login')}}">Ingresar</a>
+                            <a class="nav-link" href="{{route('auth.login')}}">{{__('messages.login')}}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('auth.register')}}">Registrarse</a>
+                            <a class="nav-link" href="{{route('auth.register')}}">{{__('messages.register')}}</a>
                         </li>
 
                     </ul>
