@@ -49,14 +49,14 @@ class ProductsController extends Controller
 
         $busqueda = $request->get('productName');
 
-        $products = Product::where('name','like',"%$busqueda%")->paginate(2);
+        $products = Product::where('name','like',"%$busqueda%")->paginate(6);
         
         return view('user.products',compact('products'));
     }
 
     public function orderByName(){
 
-        $products = Product::orderBy('name')->paginate(2);
+        $products = Product::orderBy('name')->paginate(6);
         
         return view('user.products',compact('products'));
     }

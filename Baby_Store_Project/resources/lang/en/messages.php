@@ -37,4 +37,11 @@ return [
     'alphOr'=> 'Alphabetical sorting',
     'addCart' => 'Add to cart',
     'logEr' => 'Error, you are not logged in',
+    'welcome' => '¡Welcome to BABY STORE! here you will find relevant information about this store',
+    'quote' => 'We are the store of choice for take care of your baby',
+    'genInf' => 'In Baby Store you can find the best items for your baby: diapers, toys, decorators and many more products of your choice. We hope you have a good time and we invite you to register to enter the store',
+    'welcomeAdmin' => 'Hello administrator! Welcome to the Baby Store administration panel.',
+    'quoteAdmin' => 'In the navigation bar you will find all available administration options',
+    'genInfAdmin' => 'From this administration panel you can easily modify important web information such as products, manage users, create them respectively and get special information about the application',
+    
 ];

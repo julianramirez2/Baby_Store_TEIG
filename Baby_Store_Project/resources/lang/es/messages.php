@@ -37,4 +37,11 @@ return [
     'alphOr'=> 'Ordenar alfabéticamente',
     'addCart' => 'Añadir al carrito',
     'logEr' => 'Error, no has logueado tu cuenta',
+    'welcome' => '¡Bienvenido a BABY STORE! acá encontrarás información relevante de esta tienda',
+    'quote' => 'Somos la tienda elegida para el cuidado de tu bebé',
+    'genInf' => 'En Baby Store podrás encontrar los mejores artículos para tu bebé: pañalería, juguetes, decoradores y muchos más productos de tu gusto. Esperemos la pases bien y te invitamos a registrarte para ingresar a la tienda',
+    'welcomeAdmin' => '¡Hola administrador! bienvenido al panel de administración de Baby Store',
+    'quoteAdmin' => 'En la barra de navegación tendrás todas las opciones de administración disponibles',
+    'genInfAdmin' => 'Desde este panel de administración podrás fácilmente modificar información importante de la web como los productos, administración de usuarios, crearlos respectivamente y obtener información especial acerca de la aplicación',
+    
 ];

@@ -14,7 +14,7 @@
 
 </head>
 
-<body>
+<body class="body">
     <div id="app">
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
