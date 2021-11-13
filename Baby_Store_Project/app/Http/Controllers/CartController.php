@@ -71,19 +71,20 @@ class CartController extends Controller
         return $pdf->download('cart.pdf');
     }
 
-    public function checkout(Request $request){
+    public function checkout(Request $request)
+    {
         $products = $request->session()->get("products");
         $listProductsInCart = Product::find($products);
         $total = 0;
-        if($products){
+        if ($products) {
             $order = new Order();
             $order -> setTotal(0);
             $order -> setDate(Carbon::now());
-            if(auth()->check()){
+            if (auth()->check()) {
                 $order -> setUserId(auth()->user()->id);
             }
             $order -> save();
-            foreach($listProductsInCart as $prod){
+            foreach ($listProductsInCart as $prod) {
                 $item = new item();
                 $item -> setOrderId($order->getId());
                 $item -> setProductId($prod->getId());

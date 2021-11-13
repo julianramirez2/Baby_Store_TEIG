@@ -16,17 +16,17 @@ class OrdersController extends Controller
     {
         $order = Order::all();
         $user = auth()->user();
-        $showOrder = $order->where('userID',$user->getId());
+        $showOrder = $order->where('userID', $user->getId());
         return view('order.showOrder', compact('showOrder'));
     }
 
-    public function orderPDF(){
+    public function orderPDF()
+    {
         $order = Order::all();
         $user = auth()->user();
-        $showOrder = $order->where('userID',$user->getId());
+        $showOrder = $order->where('userID', $user->getId());
 
         $pdf = PDF::loadView('order.pdf', compact('showOrder'));
         return $pdf->download('cart.pdf');
     }
-
 }

@@ -81,7 +81,7 @@ class Product extends Model
     public function setImage($image)
     {
         $this->attributes['image'] = $image;
-    } 
+    }
 
     public function items()
     {
