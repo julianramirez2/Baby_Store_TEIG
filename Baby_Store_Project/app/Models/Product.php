@@ -11,55 +11,75 @@ class Product extends Model
     use HasFactory;
     public $timestamps = false;
 
-    protected $fillable = ['name','description','price','category','stock'];
-    
-    public function getId(){
+    protected $fillable = ['name','description','price','category','stock','image'];
+
+    public function getId()
+    {
         return $this->attributes['id'];
     }
 
-    public function setId($id){
+    public function setId($id)
+    {
         $this->attributes['id'] = $id;
     }
 
-    public function getName(){
+    public function getName()
+    {
         return $this->attributes['name'];
     }
 
-    public function setName($name){
+    public function setName($name)
+    {
         $this->attributes['name'] = $name;
     }
 
-    public function getDesc(){
+    public function getDesc()
+    {
         return $this->attributes['description'];
     }
 
-    public function setDesc($description){
+    public function setDesc($description)
+    {
         $this->attributes['description'] = $description;
     }
 
-    public function getPrice(){
+    public function getPrice()
+    {
         return $this->attributes['price'];
     }
 
-    public function setPrice($price){
+    public function setPrice($price)
+    {
         $this->attributes['price'] = $price;
     }
 
-    public function getCat(){
+    public function getCat()
+    {
         return $this->attributes['category'];
     }
 
-    public function setCat($category){
+    public function setCat($category)
+    {
         $this->attributes['category'] = $category;
     }
 
-    public function getStock(){
+    public function getStock()
+    {
         return $this->attributes['stock'];
     }
 
-    public function setStock($stock){
+    public function setStock($stock)
+    {
         $this->attributes['stock'] = $stock;
     }
 
+    public function getImage()
+    {
+        return $this->attributes['image'];
+    }
 
+    public function setImage($image)
+    {
+        $this->attributes['image'] = $image;
+    }
 }

@@ -7,20 +7,24 @@ use App\Models\User;
 
 class UsersController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         return view('admin.index');
     }
 
-    public function userTable(){
+    public function userTable()
+    {
         $user = User::all();
-        return view('admin.userTable',compact('user'));
+        return view('admin.userTable', compact('user'));
     }
 
-    public function create(){
+    public function create()
+    {
         return view('admin.create');
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         $user = new User();
         $user -> setName($request -> name);
         $user -> setEmail($request -> email);
@@ -33,18 +37,21 @@ class UsersController extends Controller
         return redirect()->route('admin.index');
     }
 
-    public function edit($id){
+    public function edit($id)
+    {
         $user = User::find($id);
-        return view('admin.edit',compact('user'));
+        return view('admin.edit', compact('user'));
     }
 
-    public function update(Request $request,$id){
+    public function update(Request $request, $id)
+    {
         $user = User::find($id);
         $user->update($request->all());
         return redirect()->route('admin.index');
     }
 
-    public function destroy($id){
+    public function destroy($id)
+    {
         $user = User::find($id);
         $user -> delete();
         return redirect()->route('admin.index');

@@ -12,53 +12,64 @@ class Order extends Model
     public $timestamps = false;
 
     protected $fillable = ['details','total','date','userID'];
-    
-    public function getId(){
+
+    public function getId()
+    {
         return $this->attributes['id'];
     }
 
-    public function setId($id){
+    public function setId($id)
+    {
         $this->attributes['id'] = $id;
     }
 
-    public function getDetails(){
+    public function getDetails()
+    {
         return $this->attributes['name'];
     }
 
-    public function setDetails($details){
+    public function setDetails($details)
+    {
         $this->attributes['details'] = $details;
     }
 
-    public function getTotal(){
+    public function getTotal()
+    {
         return $this->attributes['total'];
     }
 
-    public function setTotal($total){
+    public function setTotal($total)
+    {
         $this->attributes['total'] = $total;
     }
 
-    public function getDate(){
+    public function getDate()
+    {
         return $this->attributes['date'];
     }
 
-    public function setDate($date){
+    public function setDate($date)
+    {
         $this->attributes['date'] = $date;
     }
 
-    public function getUserID(){
+    public function getUserID()
+    {
         return $this->attributes['category'];
     }
 
-    public function setUserID($userID){
+    public function setUserID($userID)
+    {
         $this->attributes['userID'] = $userID;
     }
 
-    public function user(){
+    public function user()
+    {
         return $this -> belongsTo(User::class);
     }
 
-    public function items(){
+    public function items()
+    {
         return $this -> hasMany(Item::class);
     }
-
 }

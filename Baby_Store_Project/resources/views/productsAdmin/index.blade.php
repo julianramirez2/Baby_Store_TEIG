@@ -6,13 +6,13 @@
 <table class="table table-responsive table-striped">
     <thead>
         <tr>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Descripcion</th>
-            <th>Precio</th>
-            <th>Categoria</th>
-            <th>Stock</th>
-            <th>Acciones</th>
+            <th>{{__('messages.ID')}}</th>
+            <th>{{__('messages.name')}}</th>
+            <th>{{__('messages.description')}}</th>
+            <th>{{__('messages.price')}}</th>
+            <th>{{__('messages.category')}}</th>
+            <th>{{__('messages.stock')}}</th>
+            <th>{{__('messages.actions')}}</th>
         </tr>
     </thead>
     <tbody>

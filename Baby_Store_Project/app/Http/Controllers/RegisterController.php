@@ -7,17 +7,15 @@ use App\Models\User;
 
 class RegisterController extends Controller
 {
-    public function create(){
+    public function create()
+    {
         return view('auth.register');
     }
 
-    public function store(){
-
+    public function store()
+    {
         $user = User::create(request(['name','email','address','password','role']));
         auth()->login($user);
         return redirect()->to('/');
-
     }
 }
-
-

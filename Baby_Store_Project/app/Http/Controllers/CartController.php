@@ -7,7 +7,6 @@ use App\Models\Product;
 
 use Barryvdh\DomPDF\Facade as PDF;
 
-
 class CartController extends Controller
 {
     public function index(Request $request)
@@ -21,7 +20,7 @@ class CartController extends Controller
         $ids = $request->session()->get("products"); //obtenemos ids de productos guardados en session
 
 
-        if($ids){
+        if ($ids) {
             $listProductsInCart = Product::find($ids);
         }
 
@@ -29,7 +28,7 @@ class CartController extends Controller
         $data["products"] = $listProducts;
         $data["productsInCart"] = $listProductsInCart;
 
-        return view('user.cart')->with("data",$data);
+        return view('user.cart')->with("data", $data);
     }
 
     public function add($id, Request $request)
@@ -46,8 +45,8 @@ class CartController extends Controller
         return back();
     }
 
-    public function pdf(Request $request){
-
+    public function pdf(Request $request)
+    {
         $data = []; //to be sent to the view
 
         $listProducts = array();
@@ -57,7 +56,7 @@ class CartController extends Controller
         $ids = $request->session()->get("products"); //obtenemos ids de productos guardados en session
 
 
-        if($ids){
+        if ($ids) {
             $listProductsInCart = Product::find($ids);
         }
 

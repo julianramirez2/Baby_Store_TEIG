@@ -43,5 +43,12 @@ return [
     'welcomeAdmin' => '¡Hola administrador! bienvenido al panel de administración de Baby Store',
     'quoteAdmin' => 'En la barra de navegación tendrás todas las opciones de administración disponibles',
     'genInfAdmin' => 'Desde este panel de administración podrás fácilmente modificar información importante de la web como los productos, administración de usuarios, crearlos respectivamente y obtener información especial acerca de la aplicación',
-    
+    'photo' =>  'Foto',
+    'description' => 'Descripcion',
+    'category' => 'Categoria',
+    'stock' => 'Disponibilidad',
+    'editProd' => 'Editar producto',
+    'actions' => 'Acciones',
+
+
 ];

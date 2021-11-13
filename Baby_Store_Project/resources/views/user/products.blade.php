@@ -23,7 +23,7 @@
     @foreach($products as $prod)
   <div class="col">
     <div class="card">
-      <img src="images/banner.png" class="card-img-top" alt="">
+      <img id="prodImage" src="{{asset('/storage/images/products/'.$prod->getImage())}}" class="card-img-top img-fluid " alt="">
       <div class="card-body">
         <h5 class="card-title">{{$prod->getName()}}</h5>
         <p class="card-text">{{$prod->getDesc()}}</p>

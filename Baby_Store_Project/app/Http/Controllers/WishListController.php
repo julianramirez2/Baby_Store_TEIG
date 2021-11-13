@@ -18,7 +18,7 @@ class WishListController extends Controller
         $ids = $request->session()->get("products"); //obtenemos ids de productos guardados en session
 
 
-        if($ids){
+        if ($ids) {
             $listProductsInWishlist = Product::find($ids);
         }
 
@@ -26,10 +26,10 @@ class WishListController extends Controller
         $data["products"] = $listProducts;
         $data["productsInWishlist"] = $listProductsInWishlist;
 
-        return view('user.wishlist')->with("data",$data);
+        return view('user.wishlist')->with("data", $data);
     }
 
-    public function add ($id, Request $request)
+    public function add($id, Request $request)
     {
         $products = $request->session()->get("products");
         $products[$id] = $id;

@@ -12,42 +12,48 @@
 
                         <div class="mb-md-5 mt-md-4 pb-5">
 
-                            <h2 class="fw-bold mb-2 text-uppercase">Crear producto</h2>
-                            <p class="text-white-50 mb-5">Por favor rellena todos los campos</p>
+                            <h2 class="fw-bold mb-2 text-uppercase">{{__('messages.createProduct')}}</h2>
+                            <p class="text-white-50 mb-5">{{__('messages.pleaseR')}}</p>
 
-                            <form method="POST" action="">
+                            <form method="POST" action="" enctype="multipart/form-data">
                                 @csrf
+
+                                <div class="form-outline form-white mb-4">
+                                    <input name="image" type="file" id="typeEmailX" class="form-control form-control-lg" />
+                                    <label class="form-label" for="typeEmailX">{{__('messages.photo')}}</label>
+                                </div>
+
                                 <div class="form-outline form-white mb-4">
                                     <input name="name" type="text" id="typeEmailX" class="form-control form-control-lg" />
-                                    <label class="form-label" for="typeEmailX">Nombre</label>
+                                    <label class="form-label" for="typeEmailX">{{__('messages.name')}}</label>
                                 </div>
 
                                 <div class="form-outline form-white mb-4">
                                     <input name="description" type="text" id="typePasswordX" class="form-control form-control-lg" />
-                                    <label class="form-label" for="typePasswordX">Descripcion</label>
+                                    <label class="form-label" for="typePasswordX">{{__('messages.description')}}</label>
                                 </div>
 
                                 <div class="form-outline form-white mb-4">
                                     <input name="price" type="number" id="typePasswordX" class="form-control form-control-lg" />
-                                    <label class="form-label" for="typePasswordX">Precio</label>
+                                    <label class="form-label" for="typePasswordX">{{__('messages.price')}}</label>
                                 </div>
 
                                 <div class="form-outline form-white mb-4">
                                     <input name="category" type="text" id="typePasswordX" class="form-control form-control-lg" />
-                                    <label class="form-label" for="typePasswordX">Categoria</label>
+                                    <label class="form-label" for="typePasswordX">{{__('messages.category')}}</label>
                                 </div>
 
                                 <div class="form-outline form-white mb-4">
                                     <input name="stock" type="number" id="typePasswordX" class="form-control form-control-lg" />
-                                    <label class="form-label" for="typePasswordX">Stock</label>
+                                    <label class="form-label" for="typePasswordX">{{__('messages.stock')}}</label>
                                 </div>
 
-                                <button class="btn btn-outline-light btn-lg px-5" type="submit">Crear</button>
+                                <button class="btn btn-outline-light btn-lg px-5" type="submit">{{__('messages.create')}}</button>
                             </form>
 
                             @error('message')
                             <div class="alert alert-danger" role="alert">
-                                Error al ingresar los datos
+                            {{__('messages.errorMsg')}}
                             </div>
                             @enderror
                             
