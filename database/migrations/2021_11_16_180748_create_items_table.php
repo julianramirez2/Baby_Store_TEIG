@@ -17,8 +17,8 @@ class CreateItemsTable extends Migration
             $table->id();
             $table->integer('quantity');
             $table->integer('subtotal');
-            $table->foreignId('productID')->references('id')->on('products');
-            $table->foreignId('orderID')->references('id')->on('order');
+            $table->foreignId('productID')->references('id')->on('products')->onDelete('cascade');
+            $table->foreignId('orderID')->references('id')->on('orders')->onDelete('cascade');
         });
     }
 

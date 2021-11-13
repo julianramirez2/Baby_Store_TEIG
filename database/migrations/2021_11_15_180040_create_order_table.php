@@ -17,7 +17,7 @@ class CreateOrderTable extends Migration
             $table->id();
             $table->double('total');
             $table->date('date');
-            $table->foreignId('userID')->references('id')->on('users');
+            $table->foreignId('userID')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
