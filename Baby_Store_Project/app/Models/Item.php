@@ -11,7 +11,7 @@ class Item extends Model
     use HasFactory;
     public $timestamps = false;
 
-    protected $fillable = ['quantity','subTotal'];
+    protected $fillable = ['quantity','subTotal','productID','orderID'];
 
     public function getId()
     {

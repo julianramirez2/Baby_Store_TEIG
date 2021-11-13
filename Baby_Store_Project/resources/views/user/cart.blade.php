@@ -31,6 +31,7 @@
             <a href="{{route('cart.remove')}}" type="button"
                 class="btn btn-danger">{{__('messages.deleteProducts')}}</a>
             <a href="{{route('cart.pdf')}}" type="button" class="btn btn-warning">{{__('messages.generatePDF')}}</a>
+            <a href="{{route('cart.checkout')}}" type="button" class="btn btn-warning">Checkout</a>
         </div>
     </div>
 </div>

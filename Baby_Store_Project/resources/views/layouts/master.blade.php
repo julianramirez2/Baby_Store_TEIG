@@ -32,12 +32,21 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('user.products')}}">{{__('messages.store')}}</a>
                         </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('order.showOrder')}}">{{__('messages.showOrder')}}</a>
+                        </li>
+
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('admin.index')}}"> <b style="color: #17a2b8;">{{__('messages.adminPanel')}}</b> </a>
                         </li>
                         @else
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="{{route('mainPage')}}">{{__('messages.mainPage')}}</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('order.showOrder')}}">{{__('messages.showOrder')}}</a>
                         </li>
 
                         <li class="nav-item">

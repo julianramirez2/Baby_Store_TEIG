@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\Order;
+use App\Models\Item;
+use Carbon\Carbon;
 
 use Barryvdh\DomPDF\Facade as PDF;
 
@@ -66,5 +69,33 @@ class CartController extends Controller
 
         $pdf = PDF::loadView('user.pdf', compact('data', 'listProductsInCart'));
         return $pdf->download('cart.pdf');
+    }
+
+    public function checkout(Request $request){
+        $products = $request->session()->get("products");
+        $listProductsInCart = Product::find($products);
+        $total = 0;
+        if($products){
+            $order = new Order();
+            $order -> setTotal(0);
+            $order -> setDate(Carbon::now());
+            if(auth()->check()){
+                $order -> setUserId(auth()->user()->id);
+            }
+            $order -> save();
+            foreach($listProductsInCart as $prod){
+                $item = new item();
+                $item -> setOrderId($order->getId());
+                $item -> setProductId($prod->getId());
+                $item -> setSubtotal($prod->getPrice());
+                $item -> setQuantity(1);
+                $total += $prod->getPrice()*1;
+                $item->save();
+            }
+            $order->setTotal($total);
+            $order->save();
+        }
+        $request->session()->forget('products');
+        return redirect()->route('order.showOrder');
     }
 }

@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\OrdersController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\CartController;
@@ -41,6 +42,7 @@ Route::get('/cart/add/{id}',[CartController::class,'add'])->name('cart.add');
 Route::get('/cart/remove',[CartController::class,'removeAll'])->name('cart.remove');
 
 Route::get('/cart/pdf',[CartController::class,'pdf'])->name('cart.pdf');
+Route::get('/order/pdf',[OrdersController::class,'orderPDF'])->name('order.pdf');
 
 Route::post('/register',[RegisterController::class,'store'])->name('auth.store');
 Route::post('/login',[SessionsController::class,'store'])->name('auth.store');
@@ -55,4 +57,6 @@ Route::delete('/users/delete/{id}',[UsersController::class,'destroy'])->name('ad
 Route::get('/products',[ProductsController::class,'userSearch'])->name('user.products');
 Route::get('/products/ord',[ProductsController::class,'orderByName'])->name('user.productsOrd');
 
+Route::get('/checkout',[CartController::class,'checkout'])->name('cart.checkout');
+Route::get('/order/show',[OrdersController::class,'show'])->name('order.showOrder');
 

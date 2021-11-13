@@ -19,7 +19,7 @@ return [
     'name' => 'Nombre',
     'price' => 'Precio',
     'deleteProducts' => 'Borrar todos los productos del carrito',
-    'generatePDF' => 'Generar PDF de productos en carrito',
+    'generatePDF' => 'Generar PDF',
     'bills' => 'FACTURA DE COMPRA',
     'pleaseR' => 'Por favor rellena todos los campos',
     'email' => 'Correo electrónico',
@@ -49,6 +49,8 @@ return [
     'stock' => 'Disponibilidad',
     'editProd' => 'Editar producto',
     'actions' => 'Acciones',
-
-
+    'order' => 'Orden',
+    'total' => 'Total',
+    'date' => 'Fecha',
+    'showOrder' => 'Mis ordenes',
 ];

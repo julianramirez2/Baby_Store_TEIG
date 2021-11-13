@@ -11,7 +11,7 @@ class Order extends Model
     use HasFactory;
     public $timestamps = false;
 
-    protected $fillable = ['details','total','date','userID'];
+    protected $fillable = ['total','date','userID'];
 
     public function getId()
     {
@@ -21,16 +21,6 @@ class Order extends Model
     public function setId($id)
     {
         $this->attributes['id'] = $id;
-    }
-
-    public function getDetails()
-    {
-        return $this->attributes['name'];
-    }
-
-    public function setDetails($details)
-    {
-        $this->attributes['details'] = $details;
     }
 
     public function getTotal()
@@ -70,6 +60,6 @@ class Order extends Model
 
     public function items()
     {
-        return $this -> hasMany(Item::class);
+        return $this -> hasMany(Item::class, 'order_id', 'id');
     }
 }

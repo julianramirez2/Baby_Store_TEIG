@@ -19,7 +19,7 @@ return [
     'name' => 'Name',
     'price' => 'Price',
     'deleteProducts' => 'Delete all products in cart',
-    'generatePDF' => 'Generate PDF of all products',
+    'generatePDF' => 'Generate PDF',
     'bills' => 'PURCHASE BILL',
     'pleaseR' => 'Please, fill all fields',
     'email' => 'E-mail',
@@ -49,5 +49,8 @@ return [
     'stock' => 'Stock',
     'editProd' => 'Update product',
     'actions' => 'Actions',
-    
+    'order' => 'Order',
+    'total' => 'Total',
+    'date' => 'Date',
+    'showOrder' => 'My orders',
 ];
