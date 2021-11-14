@@ -33,7 +33,6 @@ ENV COMPOSER_ALLOW_SUPERUSER 1
 expose 80
 
 RUN php artisan key:generate
-RUN php artisan migrate
 RUN php artisan migrate:refresh --seed
 RUN php artisan storage:link
 
