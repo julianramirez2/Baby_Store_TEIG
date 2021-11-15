@@ -13,12 +13,14 @@ class CreateOrderTable extends Migration
      */
     public function up()
     {
-        Schema::create('orders', function (Blueprint $table) {
-            $table->id();
-            $table->double('total');
-            $table->date('date');
-            $table->foreignId('userID')->references('id')->on('users')->onDelete('cascade');
-        });
+        if(!Schema::hasTable('orders')){
+            Schema::create('orders', function (Blueprint $table) {
+                $table->id();
+                $table->double('total');
+                $table->date('date');
+                $table->foreignId('userID')->references('id')->on('users')->onDelete('cascade');
+            });
+        }
     }
 
     /**

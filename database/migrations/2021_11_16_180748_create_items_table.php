@@ -13,13 +13,16 @@ class CreateItemsTable extends Migration
      */
     public function up()
     {
-        Schema::create('items', function (Blueprint $table) {
-            $table->id();
-            $table->integer('quantity');
-            $table->integer('subtotal');
-            $table->foreignId('productID')->references('id')->on('products')->onDelete('cascade');
-            $table->foreignId('orderID')->references('id')->on('orders')->onDelete('cascade');
-        });
+        if(!Schema::hasTable('items')){
+            Schema::create('items', function (Blueprint $table) {
+                $table->id();
+                $table->integer('quantity');
+                $table->integer('subtotal');
+                $table->foreignId('productID')->references('id')->on('products')->onDelete('cascade');
+                $table->foreignId('orderID')->references('id')->on('orders')->onDelete('cascade');
+            });
+        }
+        
     }
 
     /**
