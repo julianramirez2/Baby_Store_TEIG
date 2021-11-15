@@ -14,36 +14,36 @@
 
                         <div class="mb-md-5 mt-md-4 pb-5">
 
-                            <h2 class="fw-bold mb-2 text-uppercase">Ingreso</h2>
-                            <p class="text-white-50 mb-5">Por favor ingresa tus credenciales</p>
+                            <h2 class="fw-bold mb-2 text-uppercase">{{__('messages.mainMesLog')}}</h2>
+                            <p class="text-white-50 mb-5">{{__('messages.cred')}}</p>
 
                             <form method="POST" action="">
                                 @csrf
                                 <div class="form-outline form-white mb-4">
                                     <input name="email" type="email" id="typeEmailX" class="form-control form-control-lg" />
-                                    <label class="form-label" for="typeEmailX">Email</label>
+                                    <label class="form-label" for="typeEmailX">{{__('messages.email')}}</label>
                                 </div>
 
                                 
                                 <div class="form-outline form-white mb-4">
                                     <input name="password" type="password" id="typePasswordX" class="form-control form-control-lg" />
-                                    <label class="form-label" for="typePasswordX">Password</label>
+                                    <label class="form-label" for="typePasswordX">{{__('messages.password')}}</label>
                                 </div>
 
-                                <button class="btn btn-outline-light btn-lg px-5" type="submit">Ingresar</button>
+                                <button class="btn btn-outline-light btn-lg px-5" type="submit">{{__('messages.login')}}</button>
                             </form>
 
                             @error('message')
                             <div class="alert alert-danger" role="alert">
-                                Error al ingresar los datos
+                            {{__('messages.errorMsg')}}
                             </div>
                             @enderror
                             
                         </div>
 
                         <div>
-                            <p class="mb-0">No tienes una cuenta? <a href="{{route('auth.register')}}"
-                                    class="text-white-50 fw-bold">registrarse</a></p>
+                            <p class="mb-0">{{__('messages.account')}} <a href="{{route('auth.register')}}"
+                                    class="text-white-50 fw-bold">{{__('messages.register')}}</a></p>
                         </div>
 
                     </div>

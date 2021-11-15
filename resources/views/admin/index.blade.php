@@ -1,6 +1,6 @@
 @extends('layouts.master_admin')
 
-@section("title", "Usuario")
+@section("title", "Admin")
 
 @section('content')
 <div class="container text-center">

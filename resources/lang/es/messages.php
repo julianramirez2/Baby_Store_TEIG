@@ -53,4 +53,10 @@ return [
     'total' => 'Total',
     'date' => 'Fecha',
     'showOrder' => 'Mis ordenes',
+    'mainMesLog' => 'Ingreso',
+    'login' => 'Ingresar',
+    'cred' => 'Por favor ingresa tus credenciales',
+    'account' => 'No tienes una cuenta?',
+    'register' => 'Registrarse',
+
 ];

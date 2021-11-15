@@ -10,6 +10,7 @@ use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\WishListController;
+use Illuminate\Support\Facades\Redirect;
 
 /*
 |--------------------------------------------------------------------------
@@ -60,3 +61,10 @@ Route::get('/products/ord', [ProductsController::class,'orderByName'])->name('us
 
 Route::get('/checkout', [CartController::class,'checkout'])->name('cart.checkout');
 Route::get('/order/show', [OrdersController::class,'show'])->name('order.showOrder');
+
+Route::get('/apiView',[HomeController::class,'index'])->name('user.apiview');
+
+Route::get('locale/{locale}',function($locale){
+    session()->put('locale',$locale);
+    return Redirect::back();
+});

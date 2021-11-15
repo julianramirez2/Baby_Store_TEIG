@@ -4,7 +4,7 @@ return [
 
     'homeText' =>'Somos una tienda de productos para bebés especializados en productos para el cuidado y diversión de tu hijo',
     'createUser' =>'Create user',
-    'createProduct' =>'Crete product',
+    'createProduct' =>'Create product',
     'adminProduct' =>'Product management',
     'adminUser' =>'User management',
     'exit' =>'Exit',
@@ -53,4 +53,9 @@ return [
     'total' => 'Total',
     'date' => 'Date',
     'showOrder' => 'My orders',
+    'mainMesLog' => 'Login',
+    'login' => 'Login',
+    'cred' => 'Please, enter the corresponding information',
+    'account' => 'dont have an account?',
+    'register' => 'Register',
 ];

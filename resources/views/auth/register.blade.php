@@ -14,36 +14,36 @@
 
                         <div class="mb-md-5 mt-md-4 pb-5">
 
-                            <h2 class="fw-bold mb-2 text-uppercase">Registro</h2>
-                            <p class="text-white-50 mb-5">Ingrese sus datos</p>
+                            <h2 class="fw-bold mb-2 text-uppercase">{{__('messages.register')}}</h2>
+                            <p class="text-white-50 mb-5">{{__('messages.cred')}}</p>
 
                             <form method="POST" action="">
                                 @csrf
                                 <div class="form-outline form-white mb-4">
                                     <input name="name" type="text" id="typeEmailX"
                                         class="form-control form-control-lg" />
-                                    <label class="form-label" for="typeEmailX">Nombre</label>
+                                    <label class="form-label" for="typeEmailX">{{__('messages.name')}}</label>
                                 </div>
 
                                 <div class="form-outline form-white mb-4">
                                     <input name="email" type="email" id="typeEmailX"
                                         class="form-control form-control-lg" />
-                                    <label class="form-label" for="typeEmailX">Email</label>
+                                    <label class="form-label" for="typeEmailX">{{__('messages.email')}}</label>
                                 </div>
 
                                 <div class="form-outline form-white mb-4">
                                     <input name="address" type="text" id="typeEmailX"
                                         class="form-control form-control-lg" />
-                                    <label class="form-label" for="typeEmailX">Direccion</label>
+                                    <label class="form-label" for="typeEmailX">{{__('messages.address')}}</label>
                                 </div>
 
                                 <div class="form-outline form-white mb-4">
                                     <input name="password" type="password" id="typePasswordX"
                                         class="form-control form-control-lg" />
-                                    <label class="form-label" for="typePasswordX">Contraseña</label>
+                                    <label class="form-label" for="typePasswordX">{{__('messages.password')}}</label>
                                 </div>
 
-                                <button class="btn btn-outline-light btn-lg px-5" type="submit">Registrarse</button>
+                                <button class="btn btn-outline-light btn-lg px-5" type="submit">{{__('messages.register')}}</button>
                             </form>
                         </div>
 

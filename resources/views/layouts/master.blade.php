@@ -38,11 +38,13 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('admin.index')}}"> <b style="color: #17a2b8;">{{__('messages.adminPanel')}}</b> </a>
+                            <a class="nav-link" href="{{route('admin.index')}}"> <b
+                                    style="color: #17a2b8;">{{__('messages.adminPanel')}}</b> </a>
                         </li>
                         @else
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{{route('mainPage')}}">{{__('messages.mainPage')}}</a>
+                            <a class="nav-link active" aria-current="page"
+                                href="{{route('mainPage')}}">{{__('messages.mainPage')}}</a>
                         </li>
 
                         <li class="nav-item">
@@ -52,21 +54,34 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('user.products')}}">{{__('messages.store')}}</a>
                         </li>
-                  
+
                         @endif
 
                     </ul>
 
                     <span class="navbar-text me-4">
-                    {{__('messages.hello')}} <b style="color: #17a2b8;">{{auth()->user()->name}}</b>
+                        {{__('messages.hello')}} <b style="color: #17a2b8;">{{auth()->user()->name}}</b>
                     </span>
 
-                
+
+                    <p>.....</p>
+
+                    <a class="btn btn btn-info" type="submit" href="locale/es">ES</a>
+
+                    <p>.....</p>
+
+                    <a class="btn btn btn-info" type="submit" href="locale/en">EN</a>
+
+                    <p>.....</p>
+
                     <a class="btn btn btn-info" type="submit" href="{{route('cart.index')}}">{{__('messages.cart')}}</a>
 
                     <p>.....</p>
 
-                    <a class="btn btn btn-info" type="submit" href="{{route('auth.destroy')}}">{{__('messages.exit')}}</a>
+                    <a class="btn btn btn-info" type="submit"
+                        href="{{route('auth.destroy')}}">{{__('messages.exit')}}</a>
+
+                    
 
                     @else
 
@@ -78,6 +93,14 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('auth.register')}}">{{__('messages.register')}}</a>
                         </li>
+
+                        <p>.....</p>
+
+                        <a class="btn btn btn-info" type="submit" href="locale/es">ES</a>
+
+                        <p>.....</p>
+
+                        <a class="btn btn btn-info" type="submit" href="locale/en">EN</a>
 
                     </ul>
 

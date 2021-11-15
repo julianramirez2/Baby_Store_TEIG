@@ -15,8 +15,10 @@
   <div class="card-body">
     <h5 class="card-title">{{__('messages.quote')}}</h5>
     <p class="card-text">{{__('messages.genInf')}}</p>
+    @if(!(auth()->check()))
     <a href="{{route('auth.login')}}" class="btn btn-primary">{{__('messages.login')}}</a>
     <a href="{{route('auth.register')}}" class="btn btn-primary">{{__('messages.register')}}</a>
+    @endif
   </div>
 </div>
 </div>
