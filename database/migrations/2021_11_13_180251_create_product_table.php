@@ -13,7 +13,7 @@ class CreateProductTable extends Migration
      */
     public function up()
     {
-        if(!Schema::hasTable('products')){
+        if (!Schema::hasTable('products')) {
             Schema::create('products', function (Blueprint $table) {
                 $table->id();
                 $table->string('name');
@@ -24,7 +24,6 @@ class CreateProductTable extends Migration
                 $table->string('image');
             });
         }
-        
     }
 
     /**

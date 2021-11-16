@@ -12,11 +12,12 @@ class HomeController extends Controller
         return view('mainPage');
     }
 
-    public function index(){
-        $productos = HTTP::get('http://35.184.103.130/public/api/producta');
+    public function index()
+    {
+        $productos = HTTP::get('http://34.123.9.112/public/api/videogames');
         $arrayProd = $productos->json();
         $arrayRet = $arrayProd['data'];
-        return view('user.apiview',compact('arrayRet'));
+        return view('user.apiview', compact('arrayRet'));
     }
 
     public function user()

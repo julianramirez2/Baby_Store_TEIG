@@ -58,4 +58,8 @@ return [
     'cred' => 'Please, enter the corresponding information',
     'account' => 'dont have an account?',
     'register' => 'Register',
+    'devep' => 'Developer',
+    'publi' => 'Advertising space',
+    'abilities' => 'Abilities',
+    'pokemon' => 'Pokemon',
 ];

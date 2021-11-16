@@ -78,6 +78,15 @@
 
                     <p>.....</p>
 
+                    <a class="btn btn btn-info" type="submit" href="{{route('user.apiview')}}">{{__('messages.publi')}}</a>
+
+                    <p>.....</p>
+
+                    <a class="btn btn btn-info" type="submit" href="{{route('user.pokemon')}}">{{__('messages.pokemon')}}</a>
+
+                    <p>.....</p>
+
+
                     <a class="btn btn btn-info" type="submit"
                         href="{{route('auth.destroy')}}">{{__('messages.exit')}}</a>
 
@@ -101,6 +110,8 @@
                         <p>.....</p>
 
                         <a class="btn btn btn-info" type="submit" href="locale/en">EN</a>
+
+                        
 
                     </ul>
 

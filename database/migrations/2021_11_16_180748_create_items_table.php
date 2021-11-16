@@ -13,7 +13,7 @@ class CreateItemsTable extends Migration
      */
     public function up()
     {
-        if(!Schema::hasTable('items')){
+        if (!Schema::hasTable('items')) {
             Schema::create('items', function (Blueprint $table) {
                 $table->id();
                 $table->integer('quantity');
@@ -22,7 +22,6 @@ class CreateItemsTable extends Migration
                 $table->foreignId('orderID')->references('id')->on('orders')->onDelete('cascade');
             });
         }
-        
     }
 
     /**
@@ -35,6 +34,5 @@ class CreateItemsTable extends Migration
         DB::statement('SET FOREIGN_KEY_CHECKS = 0');
         Schema::dropIfExists('items');
         DB::statement('SET FOREIGN_KEY_CHECKS = 1');
-
     }
 }

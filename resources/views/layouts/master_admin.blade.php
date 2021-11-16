@@ -33,12 +33,10 @@
                             <a class="nav-link" href="{{route('admin.create')}}">{{__('messages.createUser')}}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link"
-                                href="{{route('productsAdmin.create')}}">{{__('messages.createProduct')}}</a>
+                            <a class="nav-link" href="{{route('productsAdmin.create')}}">{{__('messages.createProduct')}}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link"
-                                href="{{route('productsAdmin.index')}}">{{__('messages.adminProduct')}}</a>
+                            <a class="nav-link" href="{{route('productsAdmin.index')}}">{{__('messages.adminProduct')}}</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('admin.userTable')}}">{{__('messages.adminUser')}}</a>
@@ -53,9 +51,8 @@
                         {{__('messages.hello')}} <b style="color: #17a2b8;">{{auth()->user()->name}}</b>
                     </span>
 
-                    <a class="btn btn btn-info" type="submit"
-                        href="{{route('auth.destroy')}}">{{__('messages.exit')}}</a>
-
+                    <a class="btn btn btn-info" type="submit" href="{{route('auth.destroy')}}">{{__('messages.exit')}}</a>
+                    
                     <p>.....</p>
 
                     <a class="btn btn btn-info" type="submit" href="locale/es">ES</a>
@@ -77,11 +74,8 @@
 
                         <p>.....</p>
 
-                        <a class="btn btn btn-info" type="submit" href="locale/es">ES</a>
+                        <a class="btn btn btn-info" type="submit" href="{{route('user.apiview')}}">{{__('messages.publi')}}</a>
 
-                        <p>.....</p>
-
-                        <a class="btn btn btn-info" type="submit" href="locale/en">EN</a>
 
                     </ul>
 

@@ -96,8 +96,8 @@ class CartController extends Controller
             $order->setTotal($total);
             $order->save();
         }
-        
-       // $request->session()->forget('products');
+
+        // $request->session()->forget('products');
         return redirect()->route('order.showOrder');
     }
 }

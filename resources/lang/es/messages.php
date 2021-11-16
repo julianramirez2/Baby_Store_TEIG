@@ -58,5 +58,9 @@ return [
     'cred' => 'Por favor ingresa tus credenciales',
     'account' => 'No tienes una cuenta?',
     'register' => 'Registrarse',
+    'devep' => 'Desarrollador',
+    'publi' => 'Espacio publicitario',
+    'abilities' => 'Habilidades',
+    'pokemon' => 'Pokemon',
 
 ];

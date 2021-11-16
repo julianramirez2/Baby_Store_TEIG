@@ -33,7 +33,7 @@ class OrdersController extends Controller
             $listProductsInCart = Product::find($ids);
         }
 
-        $pdf = PDF::loadView('order.pdf', compact('showOrder','listProductsInCart'));
+        $pdf = PDF::loadView('order.pdf', compact('showOrder', 'listProductsInCart'));
 
         return $pdf->download('order.pdf');
     }
