@@ -19,25 +19,25 @@
                                 @csrf
                                 <div class="form-outline form-white mb-4">
                                     <input name="name" type="text" id="typeEmailX"
-                                        class="form-control form-control-lg" />
+                                        class="form-control form-control-lg" value="{{old('name')}}" required />
                                     <label class="form-label" for="typeEmailX">{{__('messages.name')}}</label>
                                 </div>
 
                                 <div class="form-outline form-white mb-4">
                                     <input name="email" type="text" id="typePasswordX"
-                                        class="form-control form-control-lg" />
+                                        class="form-control form-control-lg" value="{{old('email')}}" required/>
                                     <label class="form-label" for="typePasswordX">{{__('messages.email')}}</label>
                                 </div>
 
                                 <div class="form-outline form-white mb-4">
                                     <input name="address" type="text" id="typePasswordX"
-                                        class="form-control form-control-lg" />
+                                        class="form-control form-control-lg" value="{{old('address')}}" required/>
                                     <label class="form-label" for="typePasswordX">{{__('messages.address')}}</label>
                                 </div>
 
                                 <div class="form-outline form-white mb-4">
                                     <input name="password" type="password" id="typePasswordX"
-                                        class="form-control form-control-lg" />
+                                        class="form-control form-control-lg" value="{{old('password')}}" required/>
                                     <label class="form-label" for="typePasswordX">{{__('messages.password')}}</label>
                                 </div>
 

@@ -19,22 +19,22 @@
                                 @csrf
                     
                                 <div class="form-outline form-white mb-4">
-                                    <input name="name" type="text" id="typeEmailX" class="form-control form-control-lg" value="{{$user->getName()}}" />
+                                    <input name="name" type="text" id="typeEmailX" class="form-control form-control-lg" value="{{$user->getName()}}" required/>
                                     <label class="form-label" for="typeEmailX" >{{__('messages.name')}}</label>
                                 </div>
 
                                 <div class="form-outline form-white mb-4">
-                                    <input name="email" type="text" id="typePasswordX" class="form-control form-control-lg" value="{{$user->getEmail()}}"/>
+                                    <input name="email" type="text" id="typePasswordX" class="form-control form-control-lg" value="{{$user->getEmail()}}" required/>
                                     <label class="form-label" for="typePasswordX" placeholder="{{$user->email}}">{{__('messages.email')}}</label>
                                 </div>
 
                                 <div class="form-outline form-white mb-4">
-                                    <input name="address" type="text" id="typePasswordX" class="form-control form-control-lg" value="{{$user->getAddress()}}" />
+                                    <input name="address" type="text" id="typePasswordX" class="form-control form-control-lg" value="{{$user->getAddress()}}" required/>
                                     <label class="form-label" for="typePasswordX" >{{__('messages.address')}}</label>
                                 </div>
 
                                 <div class="form-outline form-white mb-4">
-                                    <input name="role" type="text" id="typePasswordX" class="form-control form-control-lg" value="{{$user->getRole()}}"/>
+                                    <input name="role" type="text" id="typePasswordX" class="form-control form-control-lg" value="{{$user->getRole()}}" required/>
                                     <label class="form-label" for="typePasswordX">{{__('messages.role')}}</label>
                                 </div>
 

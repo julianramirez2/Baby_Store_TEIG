@@ -19,32 +19,32 @@
                                 @csrf
 
                                 <div class="form-outline form-white mb-4">
-                                    <input name="image" type="file" id="typeEmailX" class="form-control form-control-lg" />
+                                    <input name="image" type="file" id="typeEmailX" class="form-control form-control-lg" required/>
                                     <label class="form-label" for="typeEmailX">{{__('messages.photo')}}</label>
                                 </div>
 
                                 <div class="form-outline form-white mb-4">
-                                    <input name="name" type="text" id="typeEmailX" class="form-control form-control-lg" />
+                                    <input value="{{old('name')}}" name="name" type="text" id="typeEmailX" class="form-control form-control-lg" required/>
                                     <label class="form-label" for="typeEmailX">{{__('messages.name')}}</label>
                                 </div>
 
                                 <div class="form-outline form-white mb-4">
-                                    <input name="description" type="text" id="typePasswordX" class="form-control form-control-lg" />
+                                    <input value="{{old('description')}}" name="description" type="text" id="typePasswordX" class="form-control form-control-lg" required/>
                                     <label class="form-label" for="typePasswordX">{{__('messages.description')}}</label>
                                 </div>
 
                                 <div class="form-outline form-white mb-4">
-                                    <input name="price" type="number" id="typePasswordX" class="form-control form-control-lg" />
+                                    <input value="{{old('price')}}" name="price" type="number" id="typePasswordX" class="form-control form-control-lg" required/>
                                     <label class="form-label" for="typePasswordX">{{__('messages.price')}}</label>
                                 </div>
 
                                 <div class="form-outline form-white mb-4">
-                                    <input name="category" type="text" id="typePasswordX" class="form-control form-control-lg" />
+                                    <input value="{{old('category')}}" name="category" type="text" id="typePasswordX" class="form-control form-control-lg" required/>
                                     <label class="form-label" for="typePasswordX">{{__('messages.category')}}</label>
                                 </div>
 
                                 <div class="form-outline form-white mb-4">
-                                    <input name="stock" type="number" id="typePasswordX" class="form-control form-control-lg" />
+                                    <input value="{{old('stock')}}" name="stock" type="number" id="typePasswordX" class="form-control form-control-lg" required/>
                                     <label class="form-label" for="typePasswordX">{{__('messages.stock')}}</label>
                                 </div>
 

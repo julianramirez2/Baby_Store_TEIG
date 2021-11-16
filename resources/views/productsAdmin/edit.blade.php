@@ -19,27 +19,27 @@
                                 @csrf
                     
                                 <div class="form-outline form-white mb-4">
-                                    <input name="name" type="text" id="typeEmailX" class="form-control form-control-lg" value="{{$product->name}}" />
+                                    <input name="name" type="text" id="typeEmailX" class="form-control form-control-lg" value="{{$product->name}}" required/>
                                     <label class="form-label" for="typeEmailX" >{{__('messages.name')}}</label>
                                 </div>
 
                                 <div class="form-outline form-white mb-4">
-                                    <input name="description" type="text" id="typePasswordX" class="form-control form-control-lg" value="{{$product->description}}"/>
+                                    <input name="description" type="text" id="typePasswordX" class="form-control form-control-lg" value="{{$product->description}}" required/>
                                     <label class="form-label" for="typePasswordX" " placeholder="{{$product->description}}">{{__('messages.description')}}</label>
                                 </div>
 
                                 <div class="form-outline form-white mb-4">
-                                    <input name="price" type="number" id="typePasswordX" class="form-control form-control-lg" value="{{$product->price}}" />
+                                    <input name="price" type="number" id="typePasswordX" class="form-control form-control-lg" value="{{$product->price}}" required/>
                                     <label class="form-label" for="typePasswordX" >{{__('messages.price')}}</label>
                                 </div>
 
                                 <div class="form-outline form-white mb-4">
-                                    <input name="category" type="text" id="typePasswordX" class="form-control form-control-lg" value="{{$product->category}}"/>
+                                    <input name="category" type="text" id="typePasswordX" class="form-control form-control-lg" value="{{$product->category}}" required/>
                                     <label class="form-label" for="typePasswordX">{{__('messages.category')}}</label>
                                 </div>
 
                                 <div class="form-outline form-white mb-4">
-                                    <input name="stock" type="number" id="typePasswordX" class="form-control form-control-lg" value="{{$product->stock}}"/>
+                                    <input name="stock" type="number" id="typePasswordX" class="form-control form-control-lg" value="{{$product->stock}}" required/>
                                     <label class="form-label" for="typePasswordX" >{{__('messages.stock')}}</label>
                                 </div>
 
